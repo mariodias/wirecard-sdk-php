@@ -1,0 +1,43 @@
+{
+  "name": "mariodias/wirecard-sdk-php",
+  "description": "The simplest and fastest way to integrate Wirecard into your PHP application. This SDK is based on the Wirecard REST APIs.",
+  "keywords": ["Wirecard", "PHP", "V2", "Marketplace", "E-commerce"],
+  "license": "MIT",
+  "type": "libraries",
+  "support": {
+     "issues": "https://github.com/mariodias/wirecard-sdk-php/issues",
+     "source": "https://github.com/mariodias/wirecard-sdk-php"
+ },
+  "authors": [
+    {
+      "name": "Mário Sérgio Araújo Dias",
+      "email": "mario.dias@wirecard.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "guzzlehttp/guzzle": "6.0.*",
+    "mariodias/wirecard-sdk-php": "^1.0@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1",
+    "symfony/var-dumper": "^3.3"
+  },
+     "autoload": {
+        "psr-4": {
+            "Wirecard\\": "src/"
+        }
+      },
+    "autoload-dev": {
+        "psr-4": {
+            "Wirecard\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+      "branch-alias": {
+          "dev-master": "1.x-dev"
+      }
+  },
+  "minimum-stability": "dev"
+}

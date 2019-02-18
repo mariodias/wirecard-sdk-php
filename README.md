@@ -14,7 +14,8 @@
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Code Climate](https://codeclimate.com/github/mariodias/wirecard-sdk-php/badges/gpa.svg)](https://codeclimate.com/github/mariodias/wirecard-sdk-php)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e877cf78f844b9a9e40cec175c3aa5a)](https://www.codacy.com/app/mariodias/wirecard-sdk-php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=moip/moip-sdk-php&amp;utm_campaign=Badge_Grade)
-[![StyleCI](https://styleci.io/repos/171332701)](https://styleci.io/repos/171332701)
+[![StyleCI](https://styleci.io/repos/171332701/shield)](https://styleci.io/repos/171332701)
+
  ---
  
  > Statistics
@@ -24,8 +25,8 @@
 
   > Versions
 
-  [![Latest Stable Version](https://poser.pugx.org/moip/moip-sdk-php/v/stable)](https://packagist.org/packages/moip/moip-sdk-php)
-  [![Latest Unstable Version](https://poser.pugx.org/moip/moip-sdk-php/v/unstable)](https://packagist.org/packages/moip/moip-sdk-php)
+  [![Latest Stable Version](https://poser.pugx.org/mariodias/wirecard-sdk-php/v/stable)](https://packagist.org/packages/mariodias/wirecard-sdk-php)
+  [![Latest Unstable Version](https://poser.pugx.org/mariodias/wirecard-sdk-php/v/unstable)](https://packagist.org/packages/mariodias/wirecard-sdk-php)
 
   ---
 </p>

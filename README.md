@@ -1382,7 +1382,7 @@ This project exists thanks to all the people who contribute. :rocket: :rocket: :
 
 ## License
 
-[The MIT License](LICENSE.md)
+[The MIT License](https://github.com/mariodias/wirecard-sdk-php/blob/master/LICENSE)
 
 ## Support
 

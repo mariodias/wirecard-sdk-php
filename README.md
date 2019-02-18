@@ -6,8 +6,9 @@
 </p>
 <p align="center">
     The simplest and fastest way to integrate Wirecard into your PHP application. This SDK is based on the Wirecard APIs.
- ---
-  > Current status 
+  ---
+  
+ > Current status 
   
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/build-status/master)

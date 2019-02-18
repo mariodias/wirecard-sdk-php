@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Customers.
- *
- * @package Wirecard\Resources
  */
 class Customers
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Customers
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource customers API.
      *
      * @const string
      */
-    const RESOURCE = "customers";
+    const RESOURCE = 'customers';
 
     /**
      * http Client.
@@ -54,16 +52,18 @@ class Customers
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -72,15 +72,17 @@ class Customers
      * Get details about a customer.
      *
      * @param string $customer_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($customer_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{customer_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{customer_id}', [
             'resource'    => self::RESOURCE,
-            'customer_id' => $customer_id
+            'customer_id' => $customer_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -90,7 +92,9 @@ class Customers
      * Get a customer list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getCustomers(array $options = ['http_errors' => false])
@@ -102,24 +106,25 @@ class Customers
         return $this->client->get($url, $options);
     }
 
-
-     /**
+    /**
      * Add a credit card to a customer.
      *
      * @param string $customer_id
-     * @param array $data
-     * @param array $options
+     * @param array  $data
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function addCreditCard($customer_id, array $data, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{customer_id}/fundinginstruments", [
+        $url = $this->interpolate(self::BASE_PATH.'/{customer_id}/fundinginstruments', [
             'resource'    => self::RESOURCE,
-            'customer_id' => $customer_id
+            'customer_id' => $customer_id,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -128,16 +133,18 @@ class Customers
      * Delete a credit card from a customer.
      *
      * @param string $creditcard_id
-     * @param array $data
-     * @param array $options
+     * @param array  $data
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function deleteCreditCard($creditcard_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{creditcard_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{creditcard_id}', [
             'resource'      => 'fundinginstruments',
-            'creditcard_id' => $creditcard_id
+            'creditcard_id' => $creditcard_id,
         ]);
 
         return $this->client->delete($url, $options);

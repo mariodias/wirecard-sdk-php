@@ -4,8 +4,6 @@ namespace Wirecard\Contracts;
 
 /**
  * Class Renderable.
- *
- * @package Wirecard\Contracts
  */
 interface Renderable
 {

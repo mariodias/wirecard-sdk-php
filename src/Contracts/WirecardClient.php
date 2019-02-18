@@ -4,12 +4,9 @@ namespace Wirecard\Contracts;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class WirecardClient.
- *
- * @package Wirecard\Contracts
  */
 interface WirecardClient
 {
@@ -18,28 +15,28 @@ interface WirecardClient
      *
      * @const string
      */
-    const PRODUCTION = "api";
+    const PRODUCTION = 'api';
 
     /**
      * Test api environment.
      *
      * @const string
      */
-    const SANDBOX = "sandbox";
+    const SANDBOX = 'sandbox';
 
     /**
      * Production connect environment.
      *
      * @const string
      */
-    const CONNECT_PRODUCTION = "connect";
+    const CONNECT_PRODUCTION = 'connect';
 
     /**
      * Test connect environment.
      *
      * @const string
      */
-    const CONNECT_SANDBOX = "connect-sandbox";
+    const CONNECT_SANDBOX = 'connect-sandbox';
 
     /**
      * Return a Http client instance.
@@ -51,9 +48,11 @@ interface WirecardClient
     /**
      * Executes a GET request.
      *
-     * @param null $url
+     * @param null  $url
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return string
      */
     public function get($url = null, $options = []);
@@ -61,9 +60,11 @@ interface WirecardClient
     /**
      * Executes a POST request.
      *
-     * @param null $url
+     * @param null  $url
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return string
      */
     public function post($url = null, $options = []);
@@ -71,9 +72,11 @@ interface WirecardClient
     /**
      * Executes a PUT request.
      *
-     * @param null $url
+     * @param null  $url
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return string
      */
     public function put($url = null, $options = []);
@@ -81,9 +84,11 @@ interface WirecardClient
     /**
      * Executes a DELETE request.
      *
-     * @param null $url
+     * @param null  $url
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return string
      */
     public function delete($url = null, $options = []);

@@ -4,8 +4,6 @@ namespace Wirecard\Formatter;
 
 /**
  * Class FormatInJson.
- *
- * @package Wirecard\Webservice
  */
 class FormatInJson extends Formatter
 {

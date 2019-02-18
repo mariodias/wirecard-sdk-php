@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Statements.
- *
- * @package Wirecard\Resources
  */
 class Statements
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Statements
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource statements API.
      *
      * @const string
      */
-    const RESOURCE = "statements";
+    const RESOURCE = 'statements';
 
     /**
      * http Client.
@@ -52,18 +50,20 @@ class Statements
     /**
      * Get statements details.
      *
-     * @param int $type
-     * @param date $date - Format: YYYY-MM-DD
+     * @param int   $type
+     * @param date  $date    - Format: YYYY-MM-DD
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getStatementDetails($type, $date, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/details?type={type}&date={date}", [
+        $url = $this->interpolate(self::BASE_PATH.'/details?type={type}&date={date}', [
             'resource' => self::RESOURCE,
-            'type' => $type,
-            'date' => $date
+            'type'     => $type,
+            'date'     => $date,
         ]);
 
         return $this->client->get($url, $options);
@@ -74,35 +74,40 @@ class Statements
      *
      * @param string $begin
      * @param string $end
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getStatementList($begin, $end, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."?begin={begin}&end={end}", [
+        $url = $this->interpolate(self::BASE_PATH.'?begin={begin}&end={end}', [
             'resource' => self::RESOURCE,
-            'begin' => $begin,
-            'end' => $end
+            'begin'    => $begin,
+            'end'      => $end,
         ]);
 
         return $this->client->get($url, $options);
     }
+
     /**
      * Get future statements details.
      *
-     * @param int $type
-     * @param date $date
+     * @param int   $type
+     * @param date  $date
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getFutureStatementDetails($type, $date, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/details?type={type}&date={date}", [
+        $url = $this->interpolate(self::BASE_PATH.'/details?type={type}&date={date}', [
             'resource' => 'futurestatements',
-            'type' => $type,
-            'date' => $date
+            'type'     => $type,
+            'date'     => $date,
         ]);
 
         return $this->client->get($url, $options);
@@ -113,16 +118,18 @@ class Statements
      *
      * @param string $begin
      * @param string $end
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getFutureStatementList($begin, $end, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."?begin={begin}&end={end}", [
+        $url = $this->interpolate(self::BASE_PATH.'?begin={begin}&end={end}', [
             'resource' => 'futurestatements',
-            'begin' => $begin,
-            'end' => $end
+            'begin'    => $begin,
+            'end'      => $end,
         ]);
 
         return $this->client->get($url, $options);

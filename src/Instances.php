@@ -3,31 +3,29 @@
 namespace Wirecard;
 
 use Wirecard\Contracts\WirecardClient;
-use Wirecard\Resources\Customers;
-use Wirecard\Resources\Payments;
-use Wirecard\Resources\Orders;
-use Wirecard\Resources\Refunds;
-use Wirecard\Resources\NotificationPreferences;
-use Wirecard\Resources\Webhooks;
 use Wirecard\Resources\Accounts;
 use Wirecard\Resources\Anticipations;
 use Wirecard\Resources\BankAccounts;
 use Wirecard\Resources\Conciliations;
+use Wirecard\Resources\Customers;
 use Wirecard\Resources\Entries;
 use Wirecard\Resources\Multiorders;
 use Wirecard\Resources\Multipayments;
+use Wirecard\Resources\NotificationPreferences;
+use Wirecard\Resources\Orders;
+use Wirecard\Resources\Payments;
+use Wirecard\Resources\Refunds;
 use Wirecard\Resources\Statements;
 use Wirecard\Resources\Transfers;
+use Wirecard\Resources\Webhooks;
 
 /**
  * Class Instances.
- *
- * @package Wirecard
  */
 class Instances
 {
     /**
-     * @var stdClass $client.
+     * @var stdClass.
      */
     protected $client;
 
@@ -111,22 +109,22 @@ class Instances
      */
     public function __construct(WirecardClient $client)
     {
-        $this->client                  = $client;
-        $this->customers               = new Customers($this->client);
-        $this->orders                  = new Orders($this->client);
-        $this->payments                = new Payments($this->client);
-        $this->refunds                 = new Refunds($this->client);
+        $this->client = $client;
+        $this->customers = new Customers($this->client);
+        $this->orders = new Orders($this->client);
+        $this->payments = new Payments($this->client);
+        $this->refunds = new Refunds($this->client);
         $this->notificationPreferences = new NotificationPreferences($this->client);
-        $this->webhooks                = new Webhooks($this->client);
-        $this->accounts                = new Accounts($this->client);
-        $this->anticipations           = new Anticipations($this->client);
-        $this->bankAccounts            = new BankAccounts($this->client);
-        $this->conciliations           = new Conciliations($this->client);
-        $this->entries                 = new Entries($this->client);
-        $this->multiorders             = new Multiorders($this->client);
-        $this->multipayments           = new Multipayments($this->client);
-        $this->statements              = new Statements($this->client);
-        $this->transfers               = new Transfers($this->client);
+        $this->webhooks = new Webhooks($this->client);
+        $this->accounts = new Accounts($this->client);
+        $this->anticipations = new Anticipations($this->client);
+        $this->bankAccounts = new BankAccounts($this->client);
+        $this->conciliations = new Conciliations($this->client);
+        $this->entries = new Entries($this->client);
+        $this->multiorders = new Multiorders($this->client);
+        $this->multipayments = new Multipayments($this->client);
+        $this->statements = new Statements($this->client);
+        $this->transfers = new Transfers($this->client);
     }
 
     /**

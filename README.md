@@ -6,6 +6,7 @@
 </p>
 <p align="center">
     The simplest and fastest way to integrate Wirecard into your PHP application. This SDK is based on the Wirecard APIs.
+  
   ---
   
  > Current status 

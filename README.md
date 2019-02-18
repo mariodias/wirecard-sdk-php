@@ -6,12 +6,21 @@
 </p>
 <p align="center">
     The simplest and fastest way to integrate Wirecard into your PHP application. This SDK is based on the Wirecard APIs.
-
  ---
+  > Current status 
+  
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Code Climate](https://codeclimate.com/github/mariodias/wirecard-sdk-php/badges/gpa.svg)](https://codeclimate.com/github/mariodias/wirecard-sdk-php)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e877cf78f844b9a9e40cec175c3aa5a)](https://www.codacy.com/app/mariodias/wirecard-sdk-php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=moip/moip-sdk-php&amp;utm_campaign=Badge_Grade)
+[![StyleCI](https://styleci.io/repos/171332701)](https://styleci.io/repos/171332701)
+ ---
+ 
  > Statistics
 
-  [![Total Downloads](https://poser.pugx.org/moip/moip-sdk-php/downloads)](https://packagist.org/packages/moip/moip-sdk-php)
-  [![Monthly Downloads](https://poser.pugx.org/moip/moip-sdk-php/d/monthly)](https://packagist.org/packages/moip/moip-sdk-php)
+  [![Total Downloads](https://poser.pugx.org/mariodias/wirecard-sdk-php/downloads)](https://packagist.org/packages/mariodias/wirecard-sdk-php)
+  [![Monthly Downloads](https://poser.pugx.org/mariodias/wirecard-sdk-php/d/monthly)](https://packagist.org/packages/mariodias/wirecard-sdk-php)
 
   > Versions
 
@@ -109,7 +118,7 @@
 Run the command to install via [Composer](https://getcomposer.org/):
 
 ```SHELL
-> composer require wirecard/wirecard-sdk-php
+> composer require mariodias/wirecard-sdk-php
 ```
 
 ## Authenticating and configuring the environment

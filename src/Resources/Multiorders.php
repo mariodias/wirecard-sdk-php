@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Mutiorders.
- *
- * @package Wirecard\Resources
  */
 class Multiorders
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Multiorders
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource multiorders API.
      *
      * @const string
      */
-    const RESOURCE = "multiorders";
+    const RESOURCE = 'multiorders';
 
     /**
      * http Client.
@@ -54,16 +52,18 @@ class Multiorders
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -72,15 +72,17 @@ class Multiorders
      * Get details about a multiorder.
      *
      * @param string $multiorder_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($multiorder_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{multiorder_id}", [
-            'resource' => self::RESOURCE,
-            'multiorder_id' => $multiorder_id
+        $url = $this->interpolate(self::BASE_PATH.'/{multiorder_id}', [
+            'resource'      => self::RESOURCE,
+            'multiorder_id' => $multiorder_id,
         ]);
 
         return $this->client->get($url, $options);

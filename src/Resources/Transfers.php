@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Transfers.
- *
- * @package Wirecard\Resources
  */
 class Transfers
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Transfers
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource customers API.
      *
      * @const string
      */
-    const RESOURCE = "transfers";
+    const RESOURCE = 'transfers';
 
     /**
      * http Client.
@@ -54,16 +52,18 @@ class Transfers
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -72,15 +72,17 @@ class Transfers
      * Revert a transfer.
      *
      * @param string $transfer_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function revert($transfer_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{transfer_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{transfer_id}', [
             'resource'    => self::RESOURCE,
-            'transfer_id' => $transfer_id
+            'transfer_id' => $transfer_id,
         ]);
 
         return $this->client->post($url, $options);
@@ -90,15 +92,17 @@ class Transfers
      * Get details about a transfer in Wirecard.
      *
      * @param string $transfer_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($transfer_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{transfer_id}", [
-            'resource' => self::RESOURCE,
-            'transfer_id' => $transfer_id
+        $url = $this->interpolate(self::BASE_PATH.'/{transfer_id}', [
+            'resource'    => self::RESOURCE,
+            'transfer_id' => $transfer_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -108,13 +112,15 @@ class Transfers
      * Get a transfer list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getTransfers(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
         return $this->client->get($url, $options);

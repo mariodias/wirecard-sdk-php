@@ -6,8 +6,6 @@ use Wirecard\Contracts\Renderable;
 
 /**
  * Class Formatter.
- *
- * @package Wirecard\Webservice
  */
 abstract class Formatter implements Renderable
 {

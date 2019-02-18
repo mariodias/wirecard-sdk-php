@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Conciliations.
- *
- * @package Wirecard\Resources
  */
 class Conciliations
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Conciliations
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource conciliation API.
      *
      * @const string
      */
-    const RESOURCE = "reconciliations";
+    const RESOURCE = 'reconciliations';
 
     /**
      * http Client.
@@ -52,16 +50,18 @@ class Conciliations
     /**
      * Get a financial file.
      *
-     * @param date $date - format: YYYY-MM-DD
+     * @param date  $date    - format: YYYY-MM-DD
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getFinancialFile($date, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/financials?eventsCreatedAt={date}", [
+        $url = $this->interpolate(self::BASE_PATH.'/financials?eventsCreatedAt={date}', [
             'resource' => self::RESOURCE,
-            'date' => $date
+            'date'     => $date,
         ]);
 
         return $this->client->get($url, $options);
@@ -70,16 +70,18 @@ class Conciliations
     /**
      * Get a sales file.
      *
-     * @param date $date - Format: YYYYMMDD
+     * @param date  $date    - Format: YYYYMMDD
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getSalesFile($date, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/sales/{date}", [
+        $url = $this->interpolate(self::BASE_PATH.'/sales/{date}', [
             'resource' => self::RESOURCE,
-            'date' => $date
+            'date'     => $date,
         ]);
 
         return $this->client->get($url, $options);

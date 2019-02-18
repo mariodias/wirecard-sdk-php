@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Anticipations.
- *
- * @package Wirecard\Resources
  */
 class Anticipations
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Anticipations
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource anticipation API.
      *
      * @const string
      */
-    const RESOURCE = "anticipations";
+    const RESOURCE = 'anticipations';
 
     /**
      * http Client.
@@ -52,16 +50,18 @@ class Anticipations
     /**
      * Estimates an anticipation.
      *
-     * @param int $amount
+     * @param int   $amount
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function estimates($amount, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."?amount={amount}", [
+        $url = $this->interpolate(self::BASE_PATH.'?amount={amount}', [
             'resource' => 'anticipationestimates',
-            "amount" => $amount
+            'amount'   => $amount,
         ]);
 
         return $this->client->post($url, $options);
@@ -70,16 +70,18 @@ class Anticipations
     /**
      * Create a anticipation of receivables to a seller.
      *
-     * @param int $amount
+     * @param int   $amount
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create($amount, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."?amount={amount}", [
+        $url = $this->interpolate(self::BASE_PATH.'?amount={amount}', [
             'resource' => self::RESOURCE,
-            "amount" => $amount
+            'amount'   => $amount,
         ]);
 
         return $this->client->post($url, $options);
@@ -89,15 +91,17 @@ class Anticipations
      * Get details about an anticipation.
      *
      * @param string $anticipation_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($anticipation_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{anticipation_id}", [
-            'resource'    => self::RESOURCE,
-            'anticipation_id' => $anticipation_id
+        $url = $this->interpolate(self::BASE_PATH.'/{anticipation_id}', [
+            'resource'        => self::RESOURCE,
+            'anticipation_id' => $anticipation_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -107,15 +111,17 @@ class Anticipations
      * Get an anticipation list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
-     public function getAnticipations(array $options = ['http_errors' => false])
-     {
-         $url = $this->interpolate(self::BASE_PATH, [
-             'resource' => self::RESOURCE
+    public function getAnticipations(array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH, [
+             'resource' => self::RESOURCE,
          ]);
 
-         return $this->client->get($url, $options);
-     }
+        return $this->client->get($url, $options);
+    }
 }

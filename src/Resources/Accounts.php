@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class Accounts.
- *
- * @package Wirecard\Resources
  */
 class Accounts
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class Accounts
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource accounts API.
      *
      * @const string
      */
-    const RESOURCE = "accounts";
+    const RESOURCE = 'accounts';
 
     /**
      * http Client.
@@ -54,16 +52,18 @@ class Accounts
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -72,15 +72,17 @@ class Accounts
      * Get details about an account.
      *
      * @param string $account_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($account_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{account_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{account_id}', [
             'resource'    => self::RESOURCE,
-            'account_id' => $account_id
+            'account_id'  => $account_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -92,31 +94,35 @@ class Accounts
      *
      * @param string $email
      * @param string $tax_document
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return int
      */
     public function checkExistence($email, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/exists?email={email}", [
+        $url = $this->interpolate(self::BASE_PATH.'/exists?email={email}', [
             'resource' => self::RESOURCE,
-            'email' => $email
+            'email'    => $email,
         ]);
 
         return $this->client->get($url, $options);
     }
 
-     /**
+    /**
      * Get Public Key from a Wirecard Account.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getPublicKey(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-           'resource' => 'keys'
+           'resource' => 'keys',
         ]);
 
         return $this->client->get($url, $options);
@@ -126,13 +132,15 @@ class Accounts
      * Get balances about an account.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getBalances(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => 'balances'
+            'resource' => 'balances',
         ]);
 
         return $this->client->get($url, $options);

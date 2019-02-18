@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class NotificationPreferences.
- *
- * @package Wirecard\Resources
  */
 class NotificationPreferences
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class NotificationPreferences
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource notification preferences API.
      *
      * @const string
      */
-    const RESOURCE = "preferences/notifications";
+    const RESOURCE = 'preferences/notifications';
 
     /**
      * http Client.
@@ -54,16 +52,18 @@ class NotificationPreferences
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create(array $data = null, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -73,17 +73,19 @@ class NotificationPreferences
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function createPreferenceToApp($app_id, array $data = null, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{app_id}/notifications", [
+        $url = $this->interpolate(self::BASE_PATH.'/{app_id}/notifications', [
             'resource' => 'preferences',
-            'app_id'   => $app_id
+            'app_id'   => $app_id,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -92,50 +94,56 @@ class NotificationPreferences
      * Get a notification preference.
      *
      * @param string $notification_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($notification_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{notification_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{notification_id}', [
             'resource'        => self::RESOURCE,
-            'notification_id' => $notification_id
+            'notification_id' => $notification_id,
         ]);
 
         return $this->client->get($url, $options);
     }
 
-     /**
+    /**
      * Get a notification preferences list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getPreferences(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
         return $this->client->get($url, $options);
     }
 
-     /**
+    /**
      * Delete a notification preference.
      *
      * @param string $notification_id
-     * @param array $data
-     * @param array $options
+     * @param array  $data
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function delete($notification_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{notification_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'/{notification_id}', [
             'resource'        => self::RESOURCE,
-            'notification_id' => $notification_id
+            'notification_id' => $notification_id,
         ]);
 
         return $this->client->delete($url, $options);

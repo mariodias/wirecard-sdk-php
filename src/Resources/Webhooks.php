@@ -5,16 +5,13 @@ namespace Wirecard\Resources;
 use GuzzleHttp\Exception\ClientException;
 use Wirecard\Contracts\WirecardClient;
 use Wirecard\ResourceUtils;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Webhooks.
- *
- * @package Wirecard/Resources
  */
 class Webhooks
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -24,14 +21,14 @@ class Webhooks
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource webhook API.
      *
      * @const string
      */
-    const RESOURCE  = "webhooks";
+    const RESOURCE = 'webhooks';
 
     /**
      * http Client.
@@ -54,15 +51,17 @@ class Webhooks
      * Get notifications about a transaction.
      *
      * @param string $resource_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($resource_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."?resourceId={resource_id}", [
+        $url = $this->interpolate(self::BASE_PATH.'?resourceId={resource_id}', [
             'resource'    => self::RESOURCE,
-            'resource_id' => $resource_id
+            'resource_id' => $resource_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -72,13 +71,15 @@ class Webhooks
      * Get a notifications list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function getNotifications(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
-            'resource' => self::RESOURCE
+            'resource' => self::RESOURCE,
         ]);
 
         return $this->client->get($url, $options);

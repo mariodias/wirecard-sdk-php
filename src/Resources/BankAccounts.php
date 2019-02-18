@@ -8,12 +8,10 @@ use Wirecard\ResourceUtils;
 
 /**
  * Class BankAccounts.
- *
- * @package Wirecard\Resources
  */
 class BankAccounts
 {
-    /**
+    /*
      * Standardizes the return format.
      */
     use ResourceUtils;
@@ -23,14 +21,14 @@ class BankAccounts
      *
      * @const string
      */
-    const BASE_PATH = "{resource}";
+    const BASE_PATH = '{resource}';
 
     /**
      * Resource bank account API.
      *
      * @const string
      */
-    const RESOURCE = "bankaccounts";
+    const RESOURCE = 'bankaccounts';
 
     /**
      * http Client.
@@ -54,17 +52,19 @@ class BankAccounts
      *
      * @param array $data
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function create($account_id, array $data, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{account_id}/bankaccounts", [
-            'resource' => 'accounts',
-            "account_id" => $account_id
+        $url = $this->interpolate(self::BASE_PATH.'/{account_id}/bankaccounts', [
+            'resource'   => 'accounts',
+            'account_id' => $account_id,
         ]);
 
-        $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -73,15 +73,17 @@ class BankAccounts
      * Get details about a bank account.
      *
      * @param string $bank_account_id
-     * @param array $options
+     * @param array  $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
     public function get($bank_account_id, array $options = ['http_errors' => false])
     {
-        $url = $this->interpolate(self::BASE_PATH."/{bank_account_id}", [
-            'resource'    => self::RESOURCE,
-            'bank_account_id' => $bank_account_id
+        $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
+            'resource'        => self::RESOURCE,
+            'bank_account_id' => $bank_account_id,
         ]);
 
         return $this->client->get($url, $options);
@@ -91,55 +93,61 @@ class BankAccounts
      * Get a bank account list in Wirecard.
      *
      * @param array $options
+     *
      * @throws ClientException
+     *
      * @return mixed
      */
-     public function getBankAccounts($account_id, array $options = ['http_errors' => false])
-     {
-         $url = $this->interpolate(self::BASE_PATH."/{account_id}/bankaccounts", [
-             'resource' => 'accounts',
-             "account_id" => $account_id
+    public function getBankAccounts($account_id, array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH.'/{account_id}/bankaccounts', [
+             'resource'   => 'accounts',
+             'account_id' => $account_id,
          ]);
 
-         return $this->client->get($url, $options);
-     }
+        return $this->client->get($url, $options);
+    }
 
-     /**
-      * Delete a bank account.
-      *
-      * @param string $bank_account_id
-      * @param array $options
-      * @throws ClientException
-      * @return mixed
-      */
-     public function delete($bank_account_id, array $options = ['http_errors' => false])
-     {
-         $url = $this->interpolate(self::BASE_PATH."/{bank_account_id}", [
-             'resource'    => self::RESOURCE,
-             'bank_account_id' => $bank_account_id
+    /**
+     * Delete a bank account.
+     *
+     * @param string $bank_account_id
+     * @param array $options
+     *
+     * @throws ClientException
+     *
+     * @return mixed
+     */
+    public function delete($bank_account_id, array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
+             'resource'        => self::RESOURCE,
+             'bank_account_id' => $bank_account_id,
          ]);
 
-         return $this->client->delete($url, $options);
-     }
+        return $this->client->delete($url, $options);
+    }
 
-     /**
-      * Update a bank account.
-      *
-      * @param string $bank_account_id
-      * @param array $data
-      * @param array $options
-      * @throws ClientException
-      * @return mixed
-      */
-     public function update($bank_account_id, array $data, array $options = ['http_errors' => false])
-     {
-         $url = $this->interpolate(self::BASE_PATH."/{bank_account_id}", [
-             'resource'    => self::RESOURCE,
-             'bank_account_id' => $bank_account_id
+    /**
+     * Update a bank account.
+     *
+     * @param string $bank_account_id
+     * @param array $data
+     * @param array $options
+     *
+     * @throws ClientException
+     *
+     * @return mixed
+     */
+    public function update($bank_account_id, array $data, array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
+             'resource'        => self::RESOURCE,
+             'bank_account_id' => $bank_account_id,
          ]);
 
-         $options = array_merge($options,['body' => json_encode($data)]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
-         return $this->client->put($url, $options);
-     }
+        return $this->client->put($url, $options);
+    }
 }

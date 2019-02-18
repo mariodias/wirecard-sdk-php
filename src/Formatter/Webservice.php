@@ -6,13 +6,11 @@ use Wirecard\Contracts\Renderable;
 
 /**
  * Class Webservice.
- *
- * @package Wirecard\Webservice
  */
 class Webservice implements Renderable
 {
     /**
-     * @var string $data.
+     * @var string.
      */
     protected $data;
 

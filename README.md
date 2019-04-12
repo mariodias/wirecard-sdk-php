@@ -84,7 +84,7 @@
 - [Wirecard balances](#wirecard-balances)
   - [Get balances](#get-balances)
 - [Entries](#entries)
-  - [Get data from an entrie](#get-data-from-an-entrie)
+  - [Get data from an entry](#get-data-from-an-entry)
   - [List all entries](#list-all-entries)
 - [Statements](#statements)
   - [Get a statement](#get-a-statement)
@@ -1031,16 +1031,16 @@ The Entries is a credit or debit in the statement or future account balance of a
 
 For more information about this resource, visit our documentation: [Entries](https://dev.wirecard.com.br/v2.0/reference#11-extrato)
 
-#### Get data from an entrie
+#### Get data from an entry
 
 ```PHP
 $resource = $api->entries();
 
-$entrie_id = “ENT-XXXXXXXXXXXX”;
+$entry_id = “ENT-XXXXXXXXXXXX”;
 
-$entrie = $resource->get($entrie_id);
+$entry = $resource->get($entry_id);
 
-Print_r($entrie);
+Print_r($entry);
 ```
 
 #### List all entries

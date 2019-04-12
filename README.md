@@ -211,7 +211,7 @@ $account = $resource->create($data);
 print_r($account);
 ```
 
-#### Get data from a wirecard account
+#### Get data from a Wirecard account
 
 ```PHP
 $resource = $api->accounts();

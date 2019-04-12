@@ -37,46 +37,46 @@
 - [Authenticating and configuring the environment](#authenticating-and-configuring-the-environment)
 - [Wirecard accounts](#wirecard-accounts)
   - [Verifying if user already has Wirecard Account](#verifying-if-user-already-has-wirecard-account)
-  - [Create Wirecard account](#create-wirecard-account)
-  - [Get data from a wirecard account](#get-data-from-a-wirecard-account)
+  - [Create a Wirecard account](#create-a-wirecard-account)
+  - [Get data from a Wirecard account](#get-data-from-a-wirecard-account)
   - [Get public key from a Wirecard account](#get-public-key-from-a-Wirecard-account)
 - [Customers](#customers)
-  - [Create customer](#create-customer)
-  - [Add credit card to a customer](#add-credit-card-to-a-customer)
+  - [Create a customer](#create-a-customer)
+  - [Add a credit card to a customer](#add-a-credit-card-to-a-customer)
   - [Delete credit card](#delete-credit-card)
   - [Get data from a customer](#get-data-from-a-customer)
   - [List all customers](#list-all-customers)
 - [Orders](#orders)
-  - [Create order](#create-order)
+  - [Create an order](#create-an-order)
   - [Get data from an order](#get-data-from-an-order)
   - [List all orders](#list-all-orders)
 - [Payments](#payments)
-  - [Create payment (Credit card)](#create-payment-credit-card)
-  - [Create payment (Bank slip)](#create-payment-bank-slip)
-  - [Create payment (Online debit)](#create-payment-online-debit)
-  - [Capture pre-authorized payment](#capture-pre-authorized-payment)
-  - [Cancel pre-authorized payment](#cancel-pre-authorized-payment)
+  - [Create a payment (Credit card)](#create-a-payment-credit-card)
+  - [Create a payment (Bank slip)](#create-a-payment-bank-slip)
+  - [Create a payment (Online debit)](#create-a-payment-online-debit)
+  - [Capture a pre-authorized payment](#capture-a-pre-authorized-payment)
+  - [Cancel a pre-authorized payment](#cancel-a-pre-authorized-payment)
   - [Get data from a payment](#get-data-from-a-payment)
   - [Simulate payments](#simulate-payments)
 - [Multiorders](#multiorders)
-  - [Create multiorder](#create-multiorder)
+  - [Create a multiorder](#create-a-multiorder)
   - [Get data from a multiorder](#get-data-from-a-multiorder)
 - [Multipayments](#multipayments)
-  - [Create multipayment](#create-multipayment)
+  - [Create a multipayment](#create-a-multipayment)
   - [Get data from a multipayment](#get-data-from-a-multipayment)
-  - [Capture pre-authorized multipayment](#capture-pre-authorized-multipayment)
-  - [Cancel pre-authorized multipayment](#cancel-pre-authorized-multipayment)
+  - [Capture a pre-authorized multipayment](#capture-a-pre-authorized-multipayment)
+  - [Cancel a pre-authorized multipayment](#cancel-a-pre-authorized-multipayment)
   - [Release an escrow](#release-an-escrow)
 - [Notifications](#notifications)
-  - [Create notification preference to Wirecard account](#create-notification-preference-to-Wirecard-account)
-  - [Create notification preference to APP](#create-notification-preference-to-app)
+  - [Create a notification preference to Wirecard account](#create-a-notification-preference-to-Wirecard-account)
+  - [Create a notification preference to APP](#create-a-notification-preference-to-app)
   - [Get data from a notification preference](#get-data-from-a-notification-preference)
   - [List all notification preferences](#list-all-notification-preferences)
   - [Delete a notification preference](#delete-a-notification-preference)
   - [Get data from a webhook notification](#get-data-from-a-webhook-notification)
   - [List all sent webhooks](#list-all-sent-webhooks)
 - [Bank accounts](#bank-accounts)
-  - [Create bank account](#create-bank-account)
+  - [Create a bank account](#create-a-bank-account)
   - [Get data from a bank account](#get-data-from-a-bank-account)
   - [List all bank accounts](#list-all-bank-accounts)
   - [Delete a bank account](#delete-a-bank-account)
@@ -87,25 +87,25 @@
   - [Get data from an entrie](#get-data-from-an-entrie)
   - [List all entries](#list-all-entries)
 - [Statements](#statements)
-  - [Get statement](#get-statement)
+  - [Get a statement](#get-a-statement)
   - [Get details from a statement](#get-details-from-a-statement)
   - [Get future statement](#get-future-statement)
   - [Get details from a future statement](#get-details-from-a-future-statement)
 - [Transfers](#transfers)
-  - [Create transfer](#create-transfer)
-  - [Revert transfer](#revert-transfer)
+  - [Create a transfer](#create-a-transfer)
+  - [Revert a transfer](#revert-a-transfer)
   - [Get data from a transfer](#get-data-from-a-transfer)
   - [List all transfers](#list-all-transfers)
 - [Refunds](#refunds)
-  - [Refund payment](#refund-payment)
-  - [Refund order](#refund-order)
+  - [Refund a payment](#refund-a-payment)
+  - [Refund an order](#refund-an-order)
   - [Partially refund a transaction](#partially-refund-a-transaction)
   - [Get data from a refund](#get-data-from-a-refund)
   - [List refunds from payment](#list-refunds-from-payment)
   - [List refunds from order](#list-refunds-from-order)
 - [Conciliations](#conciliations)
-  - [Get sales file](#get-sales-file)
-  - [Get financial file](#get-financial-file)
+  - [Get the sales file](#get-the-sales-file)
+  - [Get the financial file](#get-the-financial-file)
 - [Anticipations](#anticipations)
   - [Estimates an anticipation](#estimates-an-anticipation)
   - [Create an anticipation of receivables to a seller](#create-an-anticipation-of-receivables-to-a-seller)
@@ -165,7 +165,7 @@ The callback can be:
 http = 200 —> The account exists;<br>
 http = 404 —> The account don’t exists.
 
-#### Create Wirecard account
+#### Create a Wirecard account
 
 ```PHP
 $resource = $api->accounts();
@@ -241,7 +241,7 @@ The customer is the user of a service or the buyer of your online store. This AP
 
 For more information about this resource, visit our documentation: [Customers](https://dev.wirecard.com.br/v2.0/reference#1-clientes)
 
-#### Create customer
+#### Create a customer
 ```PHP
 
 $resource = $api->customers();
@@ -352,7 +352,7 @@ The Order is the representation of the shopping cart of your site. This API make
 
 For more information about this resource, visit our documentation: [Orders](https://dev.wirecard.com.br/v2.0/reference#2-pedidos)
 
-#### Create order
+#### Create an order
 ```PHP
 $resource = $api->orders();
 
@@ -433,7 +433,7 @@ For more information about this resource, visit our documentation: [Payments](ht
 
 To increase transaction security, the Wirecard API works with the concept of end-to-end encryption. That is, sensitive credit card data is encrypted in client applications (browser, native apps) and is only decrypted on Wirecard servers. This is important to prevent your buyer from being exposed to interception of the message. For more information about the credit card hash, visit our documentation: [Credit card hash](https://dev.wirecard.com.br/v2.0/reference#criptografia-1)
 
- #### Create payment (Credit card)
+ #### Create a payment (Credit card)
  ```PHP
 $resource = $api->payments();
 
@@ -467,7 +467,7 @@ $payment = $resource->create($order_id, $data);
 print_r($payment);
 ```
 
-#### Create payment (Bank slip)
+#### Create a payment (Bank slip)
 
 ```PHP
 $resource = $api->payments();
@@ -492,7 +492,7 @@ $payment = $resource->create($order_id, $data);
 
 print_r($payment);
 ```
-#### Create payment (Online debit)
+#### Create a payment (Online debit)
 
 **Important** - For now this form of payment can only be used with Itaú bank, code 341.
 
@@ -514,7 +514,7 @@ $payment = $resource->create($order_id, $data);
 print_r($payment);
 ```
 
-#### Capture pre-authorized payment
+#### Capture a pre-authorized payment
 
 The Pre-authorization is a feature that allows you to "reserve" an amount of a customer's card limit for later capture. This can be used to increase anti-fraud analysis time (if you have a tool of your own). Each pre-authorization can be held for up to 5 days and, if the catch does not occur, the payment will be canceled.
 
@@ -532,7 +532,7 @@ $payment = $resource->capture($payment_id);
 print_r($payment);
 ```
 
-#### Cancel pre-authorized payment
+#### Cancel a pre-authorized payment
 ```PHP
 $resource = $api->payments();
 
@@ -575,7 +575,7 @@ The Multi-Order is a collection of orders. Used to enable transactions involving
 
 For more information about this resource, visit our documentation: [Multiorders](https://dev.wirecard.com.br/v2.0/reference#4-multipedidos)
 
-#### Create multiorder
+#### Create a multiorder
 ```PHP
 $resource = $api->multiorders();
 
@@ -723,7 +723,7 @@ In case of credit card, multiple authorizations are generated, one for each paym
 
 For more information about this resource, visit our documentation: [Multipayments](https://dev.wirecard.com.br/v2.0/reference#multipagamentos-1)
 
-#### Create multipayment
+#### Create a multipayment
 ```PHP
 resource = $api->multipayments();
 
@@ -769,7 +769,7 @@ $multipayment = $resource->get($multipayment_id);
 print_r($multipayment);
 ```
 
-#### Capture pre-authorized multipayment
+#### Capture a pre-authorized multipayment
 ```PHP
 $resource = $api->multipayments();
 
@@ -780,7 +780,7 @@ $payment = $resource->capture($multipayment_id);
 print_r($multipayment);
 ```
 
-#### Cancel pre-authorized multipayment
+#### Cancel a pre-authorized multipayment
 ```PHP
 $resource = $api->multipayments();
 
@@ -812,7 +812,7 @@ If you do not have a URL available, you can use a **Webhook Tester** to do your 
 
 To do this, access this [application](https://webhook.site) and generate a URL automatically.
 
-#### Create notification preference to Wirecard account
+#### Create a notification preference to Wirecard account
 ```PHP
 $resource = $api->notificationPreferences();
 
@@ -831,7 +831,7 @@ $preferences = $resource->create($data);
 print_r($preferences);
 ```
 
-#### Create notification preference to APP
+#### Create a notification preference to APP
 
 ```PHP
 $resource = $api->notificationPreferences();
@@ -914,7 +914,7 @@ The Bank Account is the bank domicile of a particular Wirecard Account. This API
 
 For more information about this resource, visit our documentation: [Bank Accounts](https://dev.wirecard.com.br/v2.0/reference#contas-banc%C3%A1rias-1)
 
-#### Create bank account
+#### Create a bank account
 ```PHP
 $resource = $api->bankAccounts();
 
@@ -1054,7 +1054,7 @@ The Statement is a consolidation of the postings of an account grouped by day an
 
 For more information about this resource, visit our documentation: [Statements](https://dev.wirecard.com.br/v2.0/reference#11-extrato)
 
-#### Get statement
+#### Get a statement
 
 ```PHP
 $resource = $api->statements();
@@ -1082,7 +1082,7 @@ $statementDetails = $resource->getStatementDetails($type, $date);
 Print_r($statementDetails);
 ```
 
-#### Get future statement
+#### Get a future statement
 
 ```PHP
 $resource = $api->statements();
@@ -1118,7 +1118,7 @@ The Transfer is a transfer of funds between a Wirecard Account and another payme
 
 For more information about this resource, visit our documentation: [Transfers](https://dev.wirecard.com.br/v2.0/reference#transfer%C3%AAncias-1)
 
-#### Create transfer
+#### Create a transfer
 
 ```PHP
 $resource = $api->transfers();
@@ -1150,7 +1150,7 @@ $transfer = $resource->create($data);
 print_r($transfer);
 ```
 
-#### Revert transfer
+#### Revert a transfer
 
 ```PHP
 $resource = $api->transfers();
@@ -1194,7 +1194,7 @@ For more information about this resource, visit our documentation: [Refunds](htt
 
 The fundamental difference between a refund and a reimbursement is the form of payment in which the transaction was processed. Transactions processed via credit cards, in the event of cancellation, generate a direct chargeback on the buyer's invoice, transactions made via bank or debit account, generate a refund to Wirecard account or buyer's bank account.
 
-#### Refund payment
+#### Refund a payment
 
 ```PHP
 $resource = $api->refunds();
@@ -1206,7 +1206,7 @@ $refund = $resource->refundPayment($payment_id);
 print_r($refund);
 ```
 
-#### Refund order
+#### Refund an order
 
 ```PHP
 $resource = $api->refunds();
@@ -1302,7 +1302,7 @@ To access Conciliation in your account, please contact integracao@moip.com.br.
 
 For more information about this resource, visit our documentation: [Conciliations](https://dev.wirecard.com.br/v2.0/reference#concilia%C3%A7%C3%A3o-2)
 
-#### Get sales file
+#### Get the sales file
 
 ```PHP
 $resource = $api->conciliations();
@@ -1314,7 +1314,7 @@ $sales = $resource->getSalesFile($date);
 print_r($sales);
 ```
 
-#### Get financial file
+#### Get the financial file
 ```PHP
 $resource = $api->conciliations();
 

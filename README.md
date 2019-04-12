@@ -792,6 +792,11 @@ print_r($multipayment);
 ```
 
 #### Release an escrow
+
+The escrow is the feature used to block payments to a particular seller until some action is taken (delivery of the goods, completion of the service, for example) so that the payment can be released.
+
+For more information about this resource, visit our documentation: [Escrow](https://dev.wirecard.com.br/reference#section-multipagamento-com-cust%C3%B3dia-beta)
+
 ```PHP
 $resource = $api->multipayments();
 

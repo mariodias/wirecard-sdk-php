@@ -277,7 +277,7 @@ $customer = $resource->create($data);
 print_r($customer);
 ```
 
-#### Add credit card to a customer
+#### Add a credit card to a customer
 ```PHP
 
 $resource = $api->customers();

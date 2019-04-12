@@ -151,7 +151,7 @@ In this topic we separate all the information regarding the Wirecard Accounts as
 
 For more information about this resource, visit our documentation: [Accounts](https://dev.wirecard.com.br/v2.0/reference#classical-account-on-boarding)
 
-#### Verifying if user already has Wirecard Account
+#### Verifying if the user already has Wirecard Account
 
 The search is done through the user's email.
 

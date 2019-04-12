@@ -1380,7 +1380,7 @@ $anticipations = $resource->getAnticipations();
 print_r($anticipations);
 ```
 
-## Contribuitors
+## Contributors
 
 This project exists thanks to all the people who contribute. :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: <br> [[Click here](CONTRIBUTING.md)] to access our contributing guidelines.
 

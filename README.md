@@ -237,7 +237,7 @@ print_r($publicKey);
 
 ## Customers
 
-Customer is the user of a service or the buyer of your online store. This API allows the registration and consultation of a particular client.
+The customer is the user of a service or the buyer of your online store. This API allows the registration and consultation of a particular client.
 
 For more information about this resource, visit our documentation: [Customers](https://dev.wirecard.com.br/v2.0/reference#1-clientes)
 

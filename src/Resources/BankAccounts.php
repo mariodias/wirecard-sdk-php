@@ -112,7 +112,7 @@ class BankAccounts
      * Delete a bank account.
      *
      * @param string $bank_account_id
-     * @param array $options
+     * @param array  $options
      *
      * @throws ClientException
      *
@@ -132,8 +132,8 @@ class BankAccounts
      * Update a bank account.
      *
      * @param string $bank_account_id
-     * @param array $data
-     * @param array $options
+     * @param array  $data
+     * @param array  $options
      *
      * @throws ClientException
      *

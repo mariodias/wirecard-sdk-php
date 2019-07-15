@@ -242,6 +242,7 @@ The customer is the user of a service or the buyer of your online store. This AP
 For more information about this resource, visit our documentation: [Customers](https://dev.wirecard.com.br/v2.0/reference#1-clientes)
 
 #### Create a customer
+
 ```PHP
 
 $resource = $api->customers();
@@ -278,6 +279,7 @@ print_r($customer);
 ```
 
 #### Add a credit card to a customer
+
 ```PHP
 
 $resource = $api->customers();
@@ -315,6 +317,7 @@ print_r($customer);
 ```
 
 #### Delete credit card
+
 ```PHP
 $resource = $api->customers();
 
@@ -327,6 +330,7 @@ print_r($customer);
 ```
 
 #### Get data from a customer
+
 ```PHP
 $resource = $api->customers();
 
@@ -353,6 +357,7 @@ The Order is the representation of the shopping cart of your site. This API make
 For more information about this resource, visit our documentation: [Orders](https://dev.wirecard.com.br/v2.0/reference#2-pedidos)
 
 #### Create an order
+
 ```PHP
 $resource = $api->orders();
 
@@ -406,6 +411,7 @@ print_r($order);
 ```
 
 #### Get data from an order
+
 ```PHP
 $resource = $api->orders();
 
@@ -417,6 +423,7 @@ print_r($order);
 ```
 
 #### List all orders
+
 ```PHP
 $resource = $api->orders();
 
@@ -434,6 +441,7 @@ For more information about this resource, visit our documentation: [Payments](ht
 To increase transaction security, the Wirecard API works with the concept of end-to-end encryption. That is, sensitive credit card data is encrypted in client applications (browser, native apps) and is only decrypted on Wirecard servers. This is important to prevent your buyer from being exposed to interception of the message. For more information about the credit card hash, visit our documentation: [Credit card hash](https://dev.wirecard.com.br/v2.0/reference#criptografia-1)
 
  #### Create a payment (Credit card)
+ 
  ```PHP
 $resource = $api->payments();
 
@@ -533,6 +541,7 @@ print_r($payment);
 ```
 
 #### Cancel a pre-authorized payment
+
 ```PHP
 $resource = $api->payments();
 
@@ -544,6 +553,7 @@ print_r($payment);
 ```
 
 #### Get data from a payment
+
 ```PHP
 $resource = $api->payments();
 
@@ -576,6 +586,7 @@ The Multi-Order is a collection of orders. Used to enable transactions involving
 For more information about this resource, visit our documentation: [Multiorders](https://dev.wirecard.com.br/v2.0/reference#4-multipedidos)
 
 #### Create a multiorder
+
 ```PHP
 $resource = $api->multiorders();
 
@@ -705,6 +716,7 @@ print_r($multiorder);
 ```
 
 #### Get data from a multiorder
+
 ```PHP
 $resource = $api->multiorders();
 
@@ -724,6 +736,7 @@ In case of credit card, multiple authorizations are generated, one for each paym
 For more information about this resource, visit our documentation: [Multipayments](https://dev.wirecard.com.br/v2.0/reference#multipagamentos-1)
 
 #### Create a multipayment
+
 ```PHP
 resource = $api->multipayments();
 
@@ -770,6 +783,7 @@ print_r($multipayment);
 ```
 
 #### Capture a pre-authorized multipayment
+
 ```PHP
 $resource = $api->multipayments();
 
@@ -781,6 +795,7 @@ print_r($multipayment);
 ```
 
 #### Cancel a pre-authorized multipayment
+
 ```PHP
 $resource = $api->multipayments();
 
@@ -818,6 +833,7 @@ If you do not have a URL available, you can use a **Webhook Tester** to do your 
 To do this, access this [application](https://webhook.site) and generate a URL automatically.
 
 #### Create a notification preference to Wirecard account
+
 ```PHP
 $resource = $api->notificationPreferences();
 
@@ -870,6 +886,7 @@ print_r($preference);
 ```
 
 #### List all notification preferences
+
 ```PHP
 $resource = $api->notificationPreferences();
 
@@ -879,6 +896,7 @@ print_r($preferences);
 ```
 
 #### Delete a notification preference
+
 ```PHP
 $resource = $api->notificationPreferences();
 
@@ -920,6 +938,7 @@ The Bank Account is the bank domicile of a particular Wirecard Account. This API
 For more information about this resource, visit our documentation: [Bank Accounts](https://dev.wirecard.com.br/v2.0/reference#contas-banc%C3%A1rias-1)
 
 #### Create a bank account
+
 ```PHP
 $resource = $api->bankAccounts();
 
@@ -1320,6 +1339,7 @@ print_r($sales);
 ```
 
 #### Get the financial file
+
 ```PHP
 $resource = $api->conciliations();
 

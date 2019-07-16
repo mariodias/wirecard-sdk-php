@@ -57,14 +57,14 @@ class Refunds
      *
      * @return mixed
      */
-    public function refundPayment($payment_id, array $data = null, array $options = [ 'http_errors' => false ])
+    public function refundPayment($payment_id, array $data = null, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{payment_id}/refunds', [
             'resource'   => 'payments',
             'payment_id' => $payment_id,
         ]);
 
-        $options = array_merge($options, [ 'body' => json_encode($data) ]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -79,14 +79,14 @@ class Refunds
      *
      * @return mixed
      */
-    public function refundOrder($order_id, array $data = null, array $options = [ 'http_errors' => false ])
+    public function refundOrder($order_id, array $data = null, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{order_id}/refunds', [
             'resource'   => 'orders',
             'order_id'   => $order_id,
         ]);
 
-        $options = array_merge($options, [ 'body' => json_encode($data) ]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -101,7 +101,7 @@ class Refunds
      *
      * @return mixed
      */
-    public function get($refund_id, array $options = [ 'http_errors' => false ])
+    public function get($refund_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{refund_id}', [
             'resource'  => self::RESOURCE,
@@ -121,7 +121,7 @@ class Refunds
      *
      * @return mixed
      */
-    public function listPaymentRefunds($payment_id, array $options = [ 'http_errors' => false ])
+    public function listPaymentRefunds($payment_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{payment_id}/refunds', [
             'resource'       => 'payments',
@@ -141,7 +141,7 @@ class Refunds
      *
      * @return mixed
      */
-    public function listOrderRefunds($order_id, array $options = [ 'http_errors' => false ])
+    public function listOrderRefunds($order_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{order_id}/refunds', [
             'resource'     => 'orders',

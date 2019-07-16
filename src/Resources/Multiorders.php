@@ -57,13 +57,13 @@ class Multiorders
      *
      * @return mixed
      */
-    public function create(array $data, array $options = [ 'http_errors' => false ])
+    public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, [ 'body' => json_encode($data) ]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -78,7 +78,7 @@ class Multiorders
      *
      * @return mixed
      */
-    public function get($multiorder_id, array $options = [ 'http_errors' => false ])
+    public function get($multiorder_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{multiorder_id}', [
             'resource'      => self::RESOURCE,

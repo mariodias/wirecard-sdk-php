@@ -57,7 +57,7 @@ class Conciliations
      *
      * @return mixed
      */
-    public function getFinancialFile($date, array $options = [ 'http_errors' => false ])
+    public function getFinancialFile($date, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/financials?eventsCreatedAt={date}', [
             'resource' => self::RESOURCE,
@@ -77,7 +77,7 @@ class Conciliations
      *
      * @return mixed
      */
-    public function getSalesFile($date, array $options = [ 'http_errors' => false ])
+    public function getSalesFile($date, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/sales/{date}', [
             'resource' => self::RESOURCE,

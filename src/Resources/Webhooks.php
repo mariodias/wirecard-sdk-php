@@ -57,7 +57,7 @@ class Webhooks
      *
      * @return mixed
      */
-    public function get($resource_id, array $options = [ 'http_errors' => false ])
+    public function get($resource_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'?resourceId={resource_id}', [
             'resource'    => self::RESOURCE,
@@ -76,7 +76,7 @@ class Webhooks
      *
      * @return mixed
      */
-    public function getNotifications(array $options = [ 'http_errors' => false ])
+    public function getNotifications(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,

@@ -57,7 +57,7 @@ class Entries
      *
      * @return mixed
      */
-    public function get($entrie_id, array $options = [ 'http_errors' => false ])
+    public function get($entrie_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{entrie_id}', [
             'resource'    => self::RESOURCE,
@@ -76,7 +76,7 @@ class Entries
      *
      * @return mixed
      */
-    public function getEntries(array $options = [ 'http_errors' => false ])
+    public function getEntries(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,

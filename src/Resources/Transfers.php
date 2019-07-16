@@ -57,13 +57,13 @@ class Transfers
      *
      * @return mixed
      */
-    public function create(array $data, array $options = [ 'http_errors' => false ])
+    public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, [ 'body' => json_encode($data) ]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -78,7 +78,7 @@ class Transfers
      *
      * @return mixed
      */
-    public function revert($transfer_id, array $options = [ 'http_errors' => false ])
+    public function revert($transfer_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{transfer_id}', [
             'resource'    => self::RESOURCE,
@@ -98,7 +98,7 @@ class Transfers
      *
      * @return mixed
      */
-    public function get($transfer_id, array $options = [ 'http_errors' => false ])
+    public function get($transfer_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{transfer_id}', [
             'resource'    => self::RESOURCE,
@@ -117,7 +117,7 @@ class Transfers
      *
      * @return mixed
      */
-    public function getTransfers(array $options = [ 'http_errors' => false ])
+    public function getTransfers(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,

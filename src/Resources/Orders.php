@@ -57,13 +57,13 @@ class Orders
      *
      * @return mixed
      */
-    public function create(array $data, array $options = [ 'http_errors' => false ])
+    public function create(array $data, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, [ 'body' => json_encode($data) ]);
+        $options = array_merge($options, ['body' => json_encode($data)]);
 
         return $this->client->post($url, $options);
     }
@@ -93,7 +93,7 @@ class Orders
      *
      * @return mixed
      */
-    public function get($order_id, array $options = [ 'http_errors' => false ])
+    public function get($order_id, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{order_id}', [
             'resource' => self::RESOURCE,
@@ -112,7 +112,7 @@ class Orders
      *
      * @return mixed
      */
-    public function getOrders(array $options = [ 'http_errors' => false ])
+    public function getOrders(array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,

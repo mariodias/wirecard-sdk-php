@@ -65,14 +65,14 @@ class Payments
      *
      * @return mixed
      */
-    public function create($order_id, array $data, array $options = ['http_errors' => false])
+    public function create($order_id, array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{order_id}/payments', [
             'resource' => 'orders',
             'order_id' => $order_id,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -87,7 +87,7 @@ class Payments
      *
      * @return mixed
      */
-    public function get($payment_id, array $options = ['http_errors' => false])
+    public function get($payment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{payment_id}', [
             'resource'   => self::RESOURCE,
@@ -107,7 +107,7 @@ class Payments
      *
      * @return mixed
      */
-    public function capture($payment_id, array $options = ['http_errors' => false])
+    public function capture($payment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{payment_id}/capture', [
             'resource'   => self::RESOURCE,
@@ -127,7 +127,7 @@ class Payments
      *
      * @return mixed
      */
-    public function void($payment_id, array $options = ['http_errors' => false])
+    public function void($payment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{payment_id}/void', [
             'resource'   => self::RESOURCE,
@@ -149,7 +149,7 @@ class Payments
      *
      * @return mixed
      */
-    public function simulate($payment_id, $value, array $options = ['http_errors' => false])
+    public function simulate($payment_id, $value, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH_SIMULATE.'payment_id={payment_id}&amount={value}', [
             'payment_id' => $payment_id,
@@ -169,7 +169,7 @@ class Payments
      *
      * @return mixed
      */
-    public function release($escrow_id, array $options = ['http_errors' => false])
+    public function release($escrow_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{escrow_id}/release', [
             'resource'   => 'escrows',

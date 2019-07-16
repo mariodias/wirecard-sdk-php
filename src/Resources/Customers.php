@@ -57,13 +57,13 @@ class Customers
      *
      * @return mixed
      */
-    public function create(array $data, array $options = ['http_errors' => false])
+    public function create(array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -78,7 +78,7 @@ class Customers
      *
      * @return mixed
      */
-    public function get($customer_id, array $options = ['http_errors' => false])
+    public function get($customer_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{customer_id}', [
             'resource'    => self::RESOURCE,
@@ -97,7 +97,7 @@ class Customers
      *
      * @return mixed
      */
-    public function getCustomers(array $options = ['http_errors' => false])
+    public function getCustomers(array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
@@ -117,14 +117,14 @@ class Customers
      *
      * @return mixed
      */
-    public function addCreditCard($customer_id, array $data, array $options = ['http_errors' => false])
+    public function addCreditCard($customer_id, array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{customer_id}/fundinginstruments', [
             'resource'    => self::RESOURCE,
             'customer_id' => $customer_id,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -140,7 +140,7 @@ class Customers
      *
      * @return mixed
      */
-    public function deleteCreditCard($creditcard_id, array $options = ['http_errors' => false])
+    public function deleteCreditCard($creditcard_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{creditcard_id}', [
             'resource'      => 'fundinginstruments',

@@ -57,14 +57,14 @@ class BankAccounts
      *
      * @return mixed
      */
-    public function create($account_id, array $data, array $options = ['http_errors' => false])
+    public function create($account_id, array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{account_id}/bankaccounts', [
             'resource'   => 'accounts',
             'account_id' => $account_id,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -79,7 +79,7 @@ class BankAccounts
      *
      * @return mixed
      */
-    public function get($bank_account_id, array $options = ['http_errors' => false])
+    public function get($bank_account_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
             'resource'        => self::RESOURCE,
@@ -98,7 +98,7 @@ class BankAccounts
      *
      * @return mixed
      */
-    public function getBankAccounts($account_id, array $options = ['http_errors' => false])
+    public function getBankAccounts($account_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{account_id}/bankaccounts', [
              'resource'   => 'accounts',
@@ -118,7 +118,7 @@ class BankAccounts
      *
      * @return mixed
      */
-    public function delete($bank_account_id, array $options = ['http_errors' => false])
+    public function delete($bank_account_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
              'resource'        => self::RESOURCE,
@@ -139,14 +139,14 @@ class BankAccounts
      *
      * @return mixed
      */
-    public function update($bank_account_id, array $data, array $options = ['http_errors' => false])
+    public function update($bank_account_id, array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{bank_account_id}', [
              'resource'        => self::RESOURCE,
              'bank_account_id' => $bank_account_id,
          ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->put($url, $options);
     }

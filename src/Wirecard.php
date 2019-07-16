@@ -50,7 +50,7 @@ class Wirecard implements WirecardClient
      *
      * @var array
      */
-    protected $requestOptions = [];
+    protected $requestOptions = [ ];
 
     /**
      * Wirecard new instance.
@@ -64,7 +64,7 @@ class Wirecard implements WirecardClient
         $this->setEnvironment($environment);
 
         $base_uri = str_replace('{environment}', $this->environment, $this->endPoint);
-        $this->client = new Client(['base_uri' => $base_uri]);
+        $this->client = new Client([ 'base_uri' => $base_uri ]);
 
         $this->requestOptions = [
             'headers' => [
@@ -122,7 +122,7 @@ class Wirecard implements WirecardClient
      *
      * @return string
      */
-    public function get($url = null, $options = [])
+    public function get($url = null, $options = [ ])
     {
         $response = $this->client->get($url, $this->getOptions($options));
 
@@ -139,7 +139,7 @@ class Wirecard implements WirecardClient
      *
      * @return string
      */
-    public function post($url = null, $options = [])
+    public function post($url = null, $options = [ ])
     {
         $response = $this->client->post($url, $this->getOptions($options));
 
@@ -156,7 +156,7 @@ class Wirecard implements WirecardClient
      *
      * @return string
      */
-    public function put($url = null, $options = [])
+    public function put($url = null, $options = [ ])
     {
         $response = $this->client->put($url, $this->getOptions($options));
 
@@ -173,7 +173,7 @@ class Wirecard implements WirecardClient
      *
      * @return string
      */
-    public function delete($url = null, $options = [])
+    public function delete($url = null, $options = [ ])
     {
         $response = $this->client->delete($url, $this->getOptions($options));
         print_r('Successfully deleted resource');
@@ -186,7 +186,7 @@ class Wirecard implements WirecardClient
      *
      * @return array
      */
-    public function getOptions($options = [])
+    public function getOptions($options = [ ])
     {
         return array_merge($this->requestOptions, $options);
     }

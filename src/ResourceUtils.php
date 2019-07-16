@@ -15,7 +15,7 @@ trait ResourceUtils
      *
      * @return mixed
      */
-    protected function interpolate($content, array $data = [])
+    protected function interpolate($content, array $data = [ ])
     {
         foreach ($data as $key=>$value) {
             $content = str_replace('{'.$key.'}', $value, $content);

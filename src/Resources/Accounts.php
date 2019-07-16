@@ -57,13 +57,13 @@ class Accounts
      *
      * @return mixed
      */
-    public function create(array $data, array $options = ['http_errors' => false])
+    public function create(array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -78,7 +78,7 @@ class Accounts
      *
      * @return mixed
      */
-    public function get($account_id, array $options = ['http_errors' => false])
+    public function get($account_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{account_id}', [
             'resource'    => self::RESOURCE,
@@ -100,7 +100,7 @@ class Accounts
      *
      * @return int
      */
-    public function checkExistence($email, array $options = ['http_errors' => false])
+    public function checkExistence($email, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/exists?email={email}', [
             'resource' => self::RESOURCE,
@@ -119,7 +119,7 @@ class Accounts
      *
      * @return mixed
      */
-    public function getPublicKey(array $options = ['http_errors' => false])
+    public function getPublicKey(array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
            'resource' => 'keys',
@@ -137,7 +137,7 @@ class Accounts
      *
      * @return mixed
      */
-    public function getBalances(array $options = ['http_errors' => false])
+    public function getBalances(array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => 'balances',

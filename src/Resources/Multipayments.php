@@ -72,14 +72,14 @@ class Multipayments
      *
      * @return mixed
      */
-    public function create($multiorder_id, array $data, array $options = ['http_errors' => false])
+    public function create($multiorder_id, array $data, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{multiorder_id}/multipayments', [
             'resource'      => 'multiorders',
             'multiorder_id' => $multiorder_id,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -94,7 +94,7 @@ class Multipayments
      *
      * @return mixed
      */
-    public function get($multipayment_id, array $options = ['http_errors' => false])
+    public function get($multipayment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{multipayment_id}', [
             'resource'        => self::RESOURCE,
@@ -114,7 +114,7 @@ class Multipayments
      *
      * @return mixed
      */
-    public function capture($multipayment_id, array $options = ['http_errors' => false])
+    public function capture($multipayment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{multipayment_id}/capture', [
             'resource'        => self::RESOURCE,
@@ -134,7 +134,7 @@ class Multipayments
      *
      * @return mixed
      */
-    public function void($multipayment_id, array $options = ['http_errors' => false])
+    public function void($multipayment_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{multipayment_id}/void', [
             'resource'        => self::RESOURCE,
@@ -154,7 +154,7 @@ class Multipayments
      *
      * @return mixed
      */
-    public function release($escrow_id, array $options = ['http_errors' => false])
+    public function release($escrow_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{escrow_id}/release', [
             'resource'   => 'escrows',

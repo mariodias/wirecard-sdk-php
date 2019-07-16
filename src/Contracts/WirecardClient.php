@@ -55,7 +55,7 @@ interface WirecardClient
      *
      * @return string
      */
-    public function get($url = null, $options = []);
+    public function get($url = null, $options = [ ]);
 
     /**
      * Executes a POST request.
@@ -67,7 +67,7 @@ interface WirecardClient
      *
      * @return string
      */
-    public function post($url = null, $options = []);
+    public function post($url = null, $options = [ ]);
 
     /**
      * Executes a PUT request.
@@ -79,7 +79,7 @@ interface WirecardClient
      *
      * @return string
      */
-    public function put($url = null, $options = []);
+    public function put($url = null, $options = [ ]);
 
     /**
      * Executes a DELETE request.
@@ -91,5 +91,5 @@ interface WirecardClient
      *
      * @return string
      */
-    public function delete($url = null, $options = []);
+    public function delete($url = null, $options = [ ]);
 }

@@ -58,7 +58,7 @@ class Statements
      *
      * @return mixed
      */
-    public function getStatementDetails($type, $date, array $options = ['http_errors' => false])
+    public function getStatementDetails($type, $date, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/details?type={type}&date={date}', [
             'resource' => self::RESOURCE,
@@ -80,7 +80,7 @@ class Statements
      *
      * @return mixed
      */
-    public function getStatementList($begin, $end, array $options = ['http_errors' => false])
+    public function getStatementList($begin, $end, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'?begin={begin}&end={end}', [
             'resource' => self::RESOURCE,
@@ -102,7 +102,7 @@ class Statements
      *
      * @return mixed
      */
-    public function getFutureStatementDetails($type, $date, array $options = ['http_errors' => false])
+    public function getFutureStatementDetails($type, $date, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/details?type={type}&date={date}', [
             'resource' => 'futurestatements',
@@ -124,7 +124,7 @@ class Statements
      *
      * @return mixed
      */
-    public function getFutureStatementList($begin, $end, array $options = ['http_errors' => false])
+    public function getFutureStatementList($begin, $end, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'?begin={begin}&end={end}', [
             'resource' => 'futurestatements',

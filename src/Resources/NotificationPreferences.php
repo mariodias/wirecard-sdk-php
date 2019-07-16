@@ -57,13 +57,13 @@ class NotificationPreferences
      *
      * @return mixed
      */
-    public function create(array $data = null, array $options = ['http_errors' => false])
+    public function create(array $data = null, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -78,14 +78,14 @@ class NotificationPreferences
      *
      * @return mixed
      */
-    public function createPreferenceToApp($app_id, array $data = null, array $options = ['http_errors' => false])
+    public function createPreferenceToApp($app_id, array $data = null, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{app_id}/notifications', [
             'resource' => 'preferences',
             'app_id'   => $app_id,
         ]);
 
-        $options = array_merge($options, ['body' => json_encode($data)]);
+        $options = array_merge($options, [ 'body' => json_encode($data) ]);
 
         return $this->client->post($url, $options);
     }
@@ -100,7 +100,7 @@ class NotificationPreferences
      *
      * @return mixed
      */
-    public function get($notification_id, array $options = ['http_errors' => false])
+    public function get($notification_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{notification_id}', [
             'resource'        => self::RESOURCE,
@@ -119,7 +119,7 @@ class NotificationPreferences
      *
      * @return mixed
      */
-    public function getPreferences(array $options = ['http_errors' => false])
+    public function getPreferences(array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
             'resource' => self::RESOURCE,
@@ -139,7 +139,7 @@ class NotificationPreferences
      *
      * @return mixed
      */
-    public function delete($notification_id, array $options = ['http_errors' => false])
+    public function delete($notification_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{notification_id}', [
             'resource'        => self::RESOURCE,

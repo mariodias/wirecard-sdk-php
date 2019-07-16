@@ -57,7 +57,7 @@ class Anticipations
      *
      * @return mixed
      */
-    public function estimates($amount, array $options = ['http_errors' => false])
+    public function estimates($amount, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'?amount={amount}', [
             'resource' => 'anticipationestimates',
@@ -77,7 +77,7 @@ class Anticipations
      *
      * @return mixed
      */
-    public function create($amount, array $options = ['http_errors' => false])
+    public function create($amount, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'?amount={amount}', [
             'resource' => self::RESOURCE,
@@ -97,7 +97,7 @@ class Anticipations
      *
      * @return mixed
      */
-    public function get($anticipation_id, array $options = ['http_errors' => false])
+    public function get($anticipation_id, array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH.'/{anticipation_id}', [
             'resource'        => self::RESOURCE,
@@ -116,7 +116,7 @@ class Anticipations
      *
      * @return mixed
      */
-    public function getAnticipations(array $options = ['http_errors' => false])
+    public function getAnticipations(array $options = [ 'http_errors' => false ])
     {
         $url = $this->interpolate(self::BASE_PATH, [
              'resource' => self::RESOURCE,

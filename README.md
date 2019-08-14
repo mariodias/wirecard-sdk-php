@@ -131,12 +131,11 @@ In addition to configuring your authentication, you must also configure your env
 ```PHP
 require 'vendor/autoload.php';
 use Wirecard\Wirecard;
-use Wirecard\Connect;
 use Wirecard\Instances;
 
 $accessToken = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx_v2";
 
-$client = new Connect($accessToken, Wirecard::SANDBOX);
+$client = new Wirecard($accessToken, Wirecard::SANDBOX);
 ```
 
 After defining the authentication and the environment, you should instantiate the classes:

@@ -36,7 +36,7 @@
 - [Installation](#installation)
 - [Authenticating and configuring the environment](#authenticating-and-configuring-the-environment)
 - [Wirecard accounts](#wirecard-accounts)
-  - [Verifying if user already has Wirecard Account](#verifying-if-user-already-has-wirecard-account)
+  - [Verifying if the user already has Wirecard Account](#verifying-if-the-user-already-has-wirecard-account)
   - [Create a Wirecard account](#create-a-wirecard-account)
   - [Get data from a Wirecard account](#get-data-from-a-wirecard-account)
   - [Get public key from a Wirecard account](#get-public-key-from-a-Wirecard-account)

@@ -73,6 +73,7 @@
   - [Get data from a notification preference](#get-data-from-a-notification-preference)
   - [List all notification preferences](#list-all-notification-preferences)
   - [Delete a notification preference](#delete-a-notification-preference)
+  - [Resend a webhook notification](#resend-a-webhook-notification)
   - [Get data from a webhook notification](#get-data-from-a-webhook-notification)
   - [List all sent webhooks](#list-all-sent-webhooks)
 - [Bank accounts](#bank-accounts)
@@ -904,6 +905,21 @@ $preference_id = “NPR-XXXXXXXXXXXX”;
 $preference = $resource->delete($preference_id);
 
 print_r($preference);
+```
+
+#### Resend a webhook notification
+
+```PHP
+$resource = $api->webhooks();
+
+$data = [
+    "resourceId" => "PAY-USR6SC7LODM8",
+    "event" => "PAYMENT.AUTHORIZED"
+        ];
+
+$notification = $resource->resendNotification($data);
+
+Print_r($notification);
 ```
 
 #### Get data from a webhook notification

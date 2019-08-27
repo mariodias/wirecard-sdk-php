@@ -919,7 +919,7 @@ $data = [
 
 $notification = $resource->resendNotification($data);
 
-Print_r($notification);
+print_r($notification);
 ```
 
 #### Get data from a webhook notification

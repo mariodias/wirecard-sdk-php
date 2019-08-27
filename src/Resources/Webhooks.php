@@ -48,6 +48,27 @@ class Webhooks
     }
 
     /**
+     * Resend a notification.
+     *
+     * @param array $data
+     * @param array $options
+     *
+     * @throws ClientException
+     *
+     * @return mixed
+     */
+    public function resendNotification(array $data, array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH, [
+            'resource' => self::RESOURCE,
+        ]);
+
+        $options = array_merge($options, ['body' => json_encode($data)]);
+
+        return $this->client->post($url, $options);
+    }
+
+    /**
      * Get notifications about a transaction.
      *
      * @param string $resource_id

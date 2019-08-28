@@ -58,6 +58,7 @@
   - [Cancel a pre-authorized payment](#cancel-a-pre-authorized-payment)
   - [Get data from a payment](#get-data-from-a-payment)
   - [Simulate payments](#simulate-payments)
+  - [Estimate fees](#Estimate-fees)
 - [Multiorders](#multiorders)
   - [Create a multiorder](#create-a-multiorder)
   - [Get data from a multiorder](#get-data-from-a-multiorder)
@@ -577,6 +578,21 @@ $value = 10000;
 $payment = $resource->simulate($payment_id, $value);
 
 print_r($payment);
+```
+
+#### Estimate fees
+
+Through this API, you can estimate the transaction fees. (Available only to OAuth authentication and APPs with channel fees)
+
+```PHP
+$resource = $api->payments();
+
+$amount = 10000;
+$installmentCount = 3;
+
+$fees = $resource->simulateFees($amount, $installmentCount);
+
+print_r($fees);
 ```
 
 ## Multiorders

@@ -220,7 +220,7 @@ $account_id = "MPA-XXXXXXXXX”;
 
 $account = $resource->get($account_id);
 
-Print_r($account);
+print_r($account);
 ```
 
 #### Get public key from a Wirecard account
@@ -1056,7 +1056,7 @@ $resource = $api->accounts();
 
 $balance = $resource->getBalances();
 
-Print_r($balance);
+print_r($balance);
 ```
 
 ## Entries
@@ -1074,7 +1074,7 @@ $entry_id = “ENT-XXXXXXXXXXXX”;
 
 $entry = $resource->get($entry_id);
 
-Print_r($entry);
+print_r($entry);
 ```
 
 #### List all entries
@@ -1084,7 +1084,7 @@ $resource = $api->entries();
 
 $entries = $resource->getEntries();
 
-Print_r($entries);
+print_r($entries);
 ```
 
 ## Statements
@@ -1104,7 +1104,7 @@ $end = ‘2019-02-01’;
 
 $statement = $resource->getStatementList($begin, $end);
 
-Print_r($statement);
+print_r($statement);
 ```
 
 #### Get details from a statement
@@ -1118,7 +1118,7 @@ $date = ‘2019-01-01’;
 
 $statementDetails = $resource->getStatementDetails($type, $date);
 
-Print_r($statementDetails);
+print_r($statementDetails);
 ```
 
 #### Get a future statement
@@ -1132,7 +1132,7 @@ $end = ‘2019-03-01’;
 
 $futureStatement = $resource->getFutureStatementList($begin, $end);
 
-Print_r($futureStatement);
+print_r($futureStatement);
 ```
 
 #### Get details from a future statement
@@ -1146,7 +1146,7 @@ $date = ‘2019-03-01’;
 
 $futureStatementDetails = $resource->getFutureStatementDetails($type, $date);
 
-Print_r($futureStatementDetails);
+print_r($futureStatementDetails);
 ```
 
 Statement type, available in the [statement types](https://dev.wirecard.com.br/v2.0/reference#tipos-de-lan%C3%A7amentos)

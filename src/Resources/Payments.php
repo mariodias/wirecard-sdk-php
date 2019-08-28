@@ -38,6 +38,20 @@ class Payments
     const BASE_PATH_SIMULATE = 'https://sandbox.moip.com.br/simulador/authorize?';
 
     /**
+     * Resource fees API.
+     *
+     * @const string
+     */
+    const RESOURCE_FEES = 'fees';
+
+    /**
+     * Path simulate fees API.
+     *
+     * @const string
+     */
+    const BASE_PATH_SIMULATE_FEES = '{resource_fees}';
+
+    /**
      * http Client.
      *
      * @var stdClass
@@ -154,6 +168,28 @@ class Payments
         $url = $this->interpolate(self::BASE_PATH_SIMULATE.'payment_id={payment_id}&amount={value}', [
             'payment_id' => $payment_id,
             'value'      => $value,
+        ]);
+
+        return $this->client->get($url, $options);
+    }
+
+    /**
+     * Estimates the transaction fees. (Available only to OAuth authentication and APPs with channel fees).
+     *
+     * @param int    $amount
+     * @param int    $installmentCount
+     * @param array  $options
+     *
+     * @throws ClientException
+     *
+     * @return mixed
+     */
+    public function simulateFees($amount, $installmentCount, array $options = ['http_errors' => false])
+    {
+        $url = $this->interpolate(self::BASE_PATH_SIMULATE_FEES.'?paymentMethod=CREDIT_CARD&amount={amount}&installmentCount={installmentCount}', [
+            'resource_fees'   => self::RESOURCE_FEES,
+            'amount' => $amount,
+            'installmentCount' => $installmentCount,
         ]);
 
         return $this->client->get($url, $options);

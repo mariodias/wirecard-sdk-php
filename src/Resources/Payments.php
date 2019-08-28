@@ -176,9 +176,9 @@ class Payments
     /**
      * Estimates the transaction fees. (Available only to OAuth authentication and APPs with channel fees).
      *
-     * @param int    $amount
-     * @param int    $installmentCount
-     * @param array  $options
+     * @param int   $amount
+     * @param int   $installmentCount
+     * @param array $options
      *
      * @throws ClientException
      *
@@ -187,8 +187,8 @@ class Payments
     public function simulateFees($amount, $installmentCount, array $options = ['http_errors' => false])
     {
         $url = $this->interpolate(self::BASE_PATH_SIMULATE_FEES.'?paymentMethod=CREDIT_CARD&amount={amount}&installmentCount={installmentCount}', [
-            'resource_fees'   => self::RESOURCE_FEES,
-            'amount' => $amount,
+            'resource_fees'    => self::RESOURCE_FEES,
+            'amount'           => $amount,
             'installmentCount' => $installmentCount,
         ]);
 

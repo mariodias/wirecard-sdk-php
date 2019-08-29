@@ -567,7 +567,8 @@ print_r($payment);
 
 #### Simulate payments
 
-*You can only simulate payments in the sandbox environment.*
+Through this API, you can simulate the payment statuses.
+*You can only simulate payments statuses in the sandbox environment.*
 
 ```PHP
 $resource = $api->payments();

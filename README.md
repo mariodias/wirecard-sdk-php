@@ -115,6 +115,7 @@
   - [List all anticipations](#list-all-anticipations)
 - [Contribuitors](#contribuitors)
 - [License](#license)
+- [Changelog](#changelog)
 - [Support](#support)
 
 ## Installation
@@ -1440,6 +1441,10 @@ This project exists thanks to all the people who contribute. :rocket: :rocket: :
 ## License
 
 [The MIT License](https://github.com/mariodias/wirecard-sdk-php/blob/master/LICENSE)
+
+## Changelog
+
+[SDK changelog](https://github.com/mariodias/wirecard-sdk-php/blob/master/CHANGELOG.md)
 
 ## Support
 

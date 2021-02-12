@@ -16,7 +16,6 @@
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/mariodias/wirecard-sdk-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Code Climate](https://codeclimate.com/github/mariodias/wirecard-sdk-php/badges/gpa.svg)](https://codeclimate.com/github/mariodias/wirecard-sdk-php)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/79bf682391c047d3a2bb77467d889db5)](https://www.codacy.com/app/mario-sergiodias/wirecard-sdk-php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mariodias/wirecard-sdk-php&amp;utm_campaign=Badge_Grade)
-[![StyleCI](https://styleci.io/repos/171332701/shield)](https://styleci.io/repos/171332701)
  
  > Statistics
 

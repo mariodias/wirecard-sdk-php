@@ -115,7 +115,6 @@
 - [Contribuitors](#contribuitors)
 - [License](#license)
 - [Changelog](#changelog)
-- [Support](#support)
 
 ## Installation
 Run the command to install via [Composer](https://getcomposer.org/):
@@ -1444,7 +1443,3 @@ This project exists thanks to all the people who contribute. :rocket: :rocket: :
 ## Changelog
 
 [SDK changelog](https://github.com/mariodias/wirecard-sdk-php/blob/master/CHANGELOG.md)
-
-## Support
-
-Questions? Talk with us on [Slack](https://slackin-cqtchmfquq.now.sh) [![Slack](https://user-images.githubusercontent.com/4432322/37355972-ba0e9f32-26c3-11e8-93d3-39917eb24109.png)](https://slackin-cqtchmfquq.now.sh)
